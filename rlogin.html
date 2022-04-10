@@ -1,0 +1,306 @@
+﻿$(if http-status == 302)Hotspot login required$(endif) $(if http-header ==
+"Location")$(link-redirect)$(endif)
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Login - Hotspot Krisna</title>
+    <meta name="description" content="" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <link rel="icon" href="assets\img\favicon.png" />
+    <link rel="apple-touch-icon" href="assets\img\favicon.png" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Cabin+Condensed:400,500,600,700"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets\css\bootstrap.min.css" />
+    <link rel="stylesheet" href="assets\css\vendor.css" />
+    <link rel="stylesheet" href="assets\css\theme-3.css" id="theme" />
+    <link rel="stylesheet" href="assets\css\custom.css" />
+    <script src="assets\js\modernizr\modernizr.js"></script>
+  </head>
+  <body>
+    <!-- Content -->
+    <div class="page-loader">
+      <div class="spinner">
+        <div class="bounce"></div>
+        <div class="bounce"></div>
+        <div class="bounce"></div>
+      </div>
+    </div>
+    <!-- .page-loader -->
+    <header id="page-header" class="page-header-fixed-top">
+      <nav
+        id="pageNavbar"
+        class="page-navbar navbar navbar-static-top navbar-lg navbar-default page-navbar-from-light-fg"
+      >
+        <div class="container">
+          <div class="navbar-header">
+            <button
+              type="button"
+              class="custom-navbar-toggle collapsed"
+              data-toggle="collapse"
+              data-target="#navbar-collapse"
+              aria-expanded="false"
+            >
+              <span class="sr-only">Toggle navigation</span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+            </button>
+
+            <a class="navbar-brand" href="#">
+              <img
+                class="navbar-brand-media-img navbar-brand-media-img-dark"
+                src="assets\img\navbar-brand-media-img-dark.png"
+                alt=""
+              />
+              <img
+                class="navbar-brand-media-img navbar-brand-media-img-light"
+                src="assets\img\navbar-brand-media-img-light.png"
+                alt=""
+              />
+            </a>
+          </div>
+          <!-- .navbar-header -->
+
+          <div class="collapse navbar-collapse" id="navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li class="active">
+                <a data-smooth-scroll="true" href="#pageIntro">Home</a>
+              </li>
+              <li><a data-smooth-scroll="true" href="#aboutUs">Puasa</a></li>
+              <li>
+                <a href="http://mymovie-app.com" target="_blank">Aplikasi-ku</a>
+              </li>
+              <li class="bg-audio-toggle"><a href="#"></a></li>
+            </ul>
+          </div>
+          <!-- .navbar-collapse -->
+        </div>
+      </nav>
+    </header>
+    <!-- #page-header -->
+
+    <div
+      id="pageIntro"
+      class="page-intro-hero page-intro __layout-2 align-outer bg-theme-1"
+    >
+      <div
+        class="bg-img bg-center"
+        data-css-background-image="assets/img/page-intro/puasa2.png"
+      ></div>
+      <div class="align-inner align-middle">
+        <div class="container">
+          <div class="page-intro-row row">
+            <div class="col-md-10 col-md-offset-1">
+              <h3 class="section-title wow fadeInUpShort">
+                Marhaban Ya Ramadhan
+                <span class="d-block"
+                  >Selamat Menunaikan
+                  <span class="colored-text">Ibadah Puasa</span></span
+                >
+              </h3>
+              <div
+                class="page-intro-countdown countdown wow fadeInUpShort"
+                data-wow-delay="200ms"
+                data-countdown-date="2022/05/03"
+              >
+                <div class="countdown-row row">
+                  <div class="countdown-col countdown-day col-xs-6 col-sm-3">
+                    <div class="countdown-digit">--</div>
+                    <div class="countdown-unit">Hari</div>
+                  </div>
+                  <div class="countdown-col countdown-hour col-xs-6 col-sm-3">
+                    <div class="countdown-digit">--</div>
+                    <div class="countdown-unit">Jam</div>
+                  </div>
+                  <div class="countdown-col countdown-minute col-xs-6 col-sm-3">
+                    <div class="countdown-digit">--</div>
+                    <div class="countdown-unit">Menit</div>
+                  </div>
+                  <div class="countdown-col countdown-second col-xs-6 col-sm-3">
+                    <div class="countdown-digit">--</div>
+                    <div class="countdown-unit">Detik</div>
+                  </div>
+                </div>
+              </div>
+              <p class="text-lead wow fadeInUpShort" data-wow-delay="100ms">
+                Menuju Hari Raya Idul Fitri
+              </p>
+              <p class="text-wrap wow fadeInUpShort" data-wow-delay="100ms">
+                Silakan masukan username
+                <i><b style="color: #1b265c !important">guest</b></i> dan
+                password
+                <i><b style="color: #1b265c !important">tamu</b></i>
+              </p>
+              <div class="card-block py-lg px-md">
+                <form
+                  id="loginForm"
+                  class="md-form form-light"
+                  role="form"
+                  action="$(link-login-only)"
+                  method="post"
+                >
+                  <input
+                    type="hidden"
+                    name="dst"
+                    value="http://www.myapps.com"
+                  />
+                  <input type="hidden" name="popup" value="true" />
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div
+                        class="form-group wow fadeInUpShort"
+                        data-wow-delay="100ms"
+                      >
+                        <div class="md-form-line-wrap">
+                          <input
+                            id="inputUser"
+                            type="text"
+                            name="username"
+                            placeholder="Username"
+                            class="form-control"
+                            autofocus
+                            required
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div
+                        class="form-group wow fadeInUpShort"
+                        data-wow-delay="100ms"
+                      >
+                        <div class="md-form-line-wrap">
+                          <input
+                            id="inputPassword"
+                            type="password"
+                            name="password"
+                            placeholder="Password"
+                            class="form-control"
+                            required
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div
+                        class="form-group mb-0 wow fadeInUpShort"
+                        data-wow-delay="100ms"
+                      >
+                        <button type="submit" class="btn btn-block btn-primary">
+                          <span class="btn-elem-wrap">
+                            <span class="icon fa fa-send"></span>
+                            <span class="text">Akses Internet</span></span
+                          ></button
+                        ><span
+                          style="display: none"
+                          class="form-notify help-block mb-0"
+                        ></span>
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div
+                        class="form-group wow fadeInUpShort"
+                        data-wow-delay="100ms"
+                      >
+                        $(if error)
+                        <p><b>Terjadi kesalahan:</b> $(error)</p>
+                        $(endif)
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- .page-intro -->
+
+    <div id="aboutUs" class="about-us-section page-section module">
+      <div class="container">
+        <div class="row">
+          <div class="container">
+            <div class="col-md-5">
+              <h2
+                class="section-title wow fadeInUpShort"
+                class="img-responsive wow fadeInUpShort"
+                data-wow-delay="100ms"
+              >
+                <span class="color-theme-1">Marhaban Ya Ramadhan</span>
+              </h2>
+            </div>
+
+            <div class="col-md-6 col-md-offset-1 wow fadeInUpShort">
+              <img
+                class="img-responsive wow fadeInUpShort"
+                data-wow-delay="100ms"
+                src="/assets/img/arab.png"
+                alt=""
+              />
+              <p class="text-lead wow fadeInUpShort" data-wow-delay="100ms">
+                <i
+                  >“Hai orang-orang yang beriman, diwajibkan atas kamu berpuasa
+                  sebagaimana diwajibkan atas orang-orang sebelum kalian agar
+                  kamu bertakwa” <b>(QS. Al Baqarah: 183)</b></i
+                >
+              </p>
+              <p class="text-lead wow fadeInUpShort" data-wow-delay="100ms">
+                <i>
+                  “Ketika masuk bulan Ramadlan maka syaitan-syaitan dibelenggu,
+                  pintu-pintu surga dibuka, dan pintu-pintu neraka ditutup,”
+                  <b>(HR Bukhari dan Muslim)</b></i
+                >
+              </p>
+              <p class="text-lead wow fadeInUpShort" data-wow-delay="100ms">
+                <i>
+                  "Barangsiapa yang berpuasa Ramadhan dengan penuh iman dan
+                  mengharap pahala, maka akan diampuni dosa – dosanya yang telah
+                  lalu," <b>(HR Bukhari dan Muslim)</b></i
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <div class="page-footer-bottom">
+        <div class="container">
+          <div class="page-footer-bottom-copyright wow fadeInUpShort">
+            Copyright Krisna © <span id="tahun"></span> . All Rights Reserved.
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- .page-footer -->
+
+    <!-- audio -->
+    <audio id="bgAudioPlayer" loop="">
+      <source src="media\happy.mpga" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
+    <!-- /audio -->
+    <!-- /Content -->
+
+    <!-- script -->
+    <script src="assets\js\jquery\jquery.1.12.4.min.js"></script>
+    <script src="assets\js\bootstrap\bootstrap.min.js"></script>
+    <script src="assets\js\vendor.js"></script>
+    <script src="assets\js\main.js"></script>
+    <script>
+      $("#menu-toggle").click(function (e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+      });
+    </script>
+  </body>
+</html>

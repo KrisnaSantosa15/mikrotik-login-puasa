@@ -1,0 +1,294 @@
+﻿<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Status - Hotspot Krisna</title>
+    $(if refresh-timeout)
+    <meta http-equiv="refresh" content="$(refresh-timeout-secs)" />
+    $(endif)
+    <meta name="description" content="" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <link rel="icon" href="assets\img\favicon.png" />
+    <link rel="apple-touch-icon" href="assets\img\favicon.png" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Cabin+Condensed:400,500,600,700"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets\css\bootstrap.min.css" />
+    <link rel="stylesheet" href="assets\css\vendor.css" />
+    <link rel="stylesheet" href="assets\css\theme-3.css" id="theme" />
+    <link rel="stylesheet" href="assets\css\custom.css" />
+    <script src="assets\js\modernizr\modernizr.js"></script>
+  </head>
+  <body>
+    <!-- Content -->
+    <div class="page-loader">
+      <div class="spinner">
+        <div class="bounce"></div>
+        <div class="bounce"></div>
+        <div class="bounce"></div>
+      </div>
+    </div>
+    <!-- .page-loader -->
+    <header id="page-header" class="page-header-fixed-top">
+      <nav
+        id="pageNavbar"
+        class="page-navbar navbar navbar-static-top navbar-lg navbar-default page-navbar-from-light-fg"
+      >
+        <div class="container">
+          <div class="navbar-header">
+            <button
+              type="button"
+              class="custom-navbar-toggle collapsed"
+              data-toggle="collapse"
+              data-target="#navbar-collapse"
+              aria-expanded="false"
+            >
+              <span class="sr-only">Toggle navigation</span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+            </button>
+
+            <a class="navbar-brand" href="#">
+              <img
+                class="navbar-brand-media-img navbar-brand-media-img-dark"
+                src="assets\img\navbar-brand-media-img-dark.png"
+                alt=""
+              />
+              <img
+                class="navbar-brand-media-img navbar-brand-media-img-light"
+                src="assets\img\navbar-brand-media-img-light.png"
+                alt=""
+              />
+            </a>
+          </div>
+          <!-- .navbar-header -->
+
+          <div class="collapse navbar-collapse" id="navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li class="active">
+                <a data-smooth-scroll="true" href="#pageIntro">Home</a>
+              </li>
+              <li><a data-smooth-scroll="true" href="#aboutUs">Puasa</a></li>
+              <li>
+                <a href="http://mymovie-app.com" target="_blank">Aplikasi-ku</a>
+              </li>
+              <li class="bg-audio-toggle"><a href="#"></a></li>
+            </ul>
+          </div>
+          <!-- .navbar-collapse -->
+        </div>
+      </nav>
+    </header>
+    <!-- #page-header -->
+
+    <div
+      id="pageIntro"
+      class="page-intro-hero page-intro __layout-2 align-outer bg-theme-1"
+    >
+      <div
+        class="bg-img bg-center"
+        data-css-background-image="assets/img/page-intro/puasa2.png"
+      ></div>
+      <div class="align-inner align-middle">
+        <div class="container">
+          <div class="page-intro-row row">
+            <div class="col-md-10 col-md-offset-1">
+              <h3 class="section-title wow fadeInUpShort">
+                Marhaban Ya Ramadhan
+                <span class="d-block"
+                  >Selamat Menunaikan
+                  <span class="colored-text">Ibadah Puasa</span></span
+                >
+              </h3>
+              <div
+                class="page-intro-countdown countdown wow fadeInUpShort"
+                data-wow-delay="200ms"
+                data-countdown-date="2022/05/03"
+              >
+                <div class="countdown-row row">
+                  <div class="countdown-col countdown-day col-xs-6 col-sm-3">
+                    <div class="countdown-digit">--</div>
+                    <div class="countdown-unit">Hari</div>
+                  </div>
+                  <div class="countdown-col countdown-hour col-xs-6 col-sm-3">
+                    <div class="countdown-digit">--</div>
+                    <div class="countdown-unit">Jam</div>
+                  </div>
+                  <div class="countdown-col countdown-minute col-xs-6 col-sm-3">
+                    <div class="countdown-digit">--</div>
+                    <div class="countdown-unit">Menit</div>
+                  </div>
+                  <div class="countdown-col countdown-second col-xs-6 col-sm-3">
+                    <div class="countdown-digit">--</div>
+                    <div class="countdown-unit">Detik</div>
+                  </div>
+                </div>
+              </div>
+              <p class="text-lead wow fadeInUpShort" data-wow-delay="100ms">
+                Menuju Hari Raya Idul Fitri
+              </p>
+              <p class="text-wrap wow fadeInUpShort" data-wow-delay="100ms">
+                Status penggunaan internet
+              </p>
+              <div class="card-block py-lg px-md">
+                <table class="table wow fadeInUpShort" data-wow-delay="100ms">
+                  <tbody class="align-l">
+                    <tr>
+                      <td>Username</td>
+                      <td>$(username)</td>
+                    </tr>
+                    <tr>
+                      <td>IP Address</td>
+                      <td>$(ip)</td>
+                    </tr>
+                    <tr>
+                      <td>MAC Address</td>
+                      <td>$(mac)</td>
+                    </tr>
+                    $(if session-time-left)
+                    <tr>
+                      <td>Connected / left</td>
+                      <td>$(uptime) / $(session-time-left)</td>
+                    </tr>
+                    $(else)
+                    <tr>
+                      <td>Connected</td>
+                      <td>$(uptime)</td>
+                    </tr>
+                    $(endif)
+                    <tr>
+                      <td>Download / Upload</td>
+                      <td>$(bytes-out-nice) / $(bytes-in-nice)</td>
+                    </tr>
+                    $(if limit-bytes-total)
+                    <tr>
+                      <td>Sisa Kuota</td>
+                      <td>
+                        $(if limit-bytes-total)
+                        <script language="javascript">
+                          result = ($(limit - bytes - total) / 1000000).toFixed(
+                            2
+                          );
+                          document.write(result);
+                        </script>
+                        MiB $(endif) $(if limit-bytes-total ==
+                        '')Unlimited$(endif)
+                      </td>
+                    </tr>
+                    $(else)
+                    <tr>
+                      <td>Sisa Kuota</td>
+                      <td>
+                        $(if limit-bytes-out)
+                        <script language="javascript">
+                          result = ($(limit - bytes - out) / 1000000).toFixed(
+                            2
+                          );
+                          document.write(result);
+                        </script>
+                        MiB $(endif) $(if limit-bytes-out ==
+                        '')Unlimited$(endif)
+                      </td>
+                    </tr>
+                    $(endif) $(if refresh-timeout)
+                    <tr>
+                      <td>Status refresh</td>
+                      <td>$(refresh-timeout)</td>
+                    </tr>
+                    $(endif)
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- .page-intro -->
+
+    <div id="aboutUs" class="about-us-section page-section module">
+      <div class="container">
+        <div class="row">
+          <div class="container">
+            <div class="col-md-5">
+              <h2
+                class="section-title wow fadeInUpShort"
+                class="img-responsive wow fadeInUpShort"
+                data-wow-delay="100ms"
+              >
+                <span class="color-theme-1">Marhaban Ya Ramadhan</span>
+              </h2>
+            </div>
+
+            <div class="col-md-6 col-md-offset-1 wow fadeInUpShort">
+              <img
+                class="img-responsive wow fadeInUpShort"
+                data-wow-delay="100ms"
+                src="/assets/img/arab.png"
+                alt=""
+              />
+              <p class="text-lead wow fadeInUpShort" data-wow-delay="100ms">
+                <i
+                  >“Hai orang-orang yang beriman, diwajibkan atas kamu berpuasa
+                  sebagaimana diwajibkan atas orang-orang sebelum kalian agar
+                  kamu bertakwa” <b>(QS. Al Baqarah: 183)</b></i
+                >
+              </p>
+              <p class="text-lead wow fadeInUpShort" data-wow-delay="100ms">
+                <i>
+                  “Ketika masuk bulan Ramadlan maka syaitan-syaitan dibelenggu,
+                  pintu-pintu surga dibuka, dan pintu-pintu neraka ditutup,”
+                  <b>(HR Bukhari dan Muslim)</b></i
+                >
+              </p>
+              <p class="text-lead wow fadeInUpShort" data-wow-delay="100ms">
+                <i>
+                  "Barangsiapa yang berpuasa Ramadhan dengan penuh iman dan
+                  mengharap pahala, maka akan diampuni dosa – dosanya yang telah
+                  lalu," <b>(HR Bukhari dan Muslim)</b></i
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <div class="page-footer-bottom">
+        <div class="container">
+          <div class="page-footer-bottom-copyright wow fadeInUpShort">
+            Copyright Krisna © <span id="tahun"></span> . All Rights Reserved.
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- .page-footer -->
+
+    <!-- audio -->
+    <audio id="bgAudioPlayer" loop="">
+      <source src="media\happy.mpga" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
+    <!-- /audio -->
+    <!-- /Content -->
+
+    <!-- script -->
+    <script src="assets\js\jquery\jquery.1.12.4.min.js"></script>
+    <script src="assets\js\bootstrap\bootstrap.min.js"></script>
+    <script src="assets\js\vendor.js"></script>
+    <script src="assets\js\main.js"></script>
+    <script>
+      $("#menu-toggle").click(function (e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+      });
+    </script>
+  </body>
+</html>
